@@ -1,0 +1,22 @@
+body{
+    background-color: azure;
+}
+#contenedorImagen{
+    width: 1000px; height: 667px;
+    border: 2px solid #ecf0f1;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    background-color: coral;
+    
+}
+img{
+    object-fit: cover;
+    transition: 1s ease;
+    width: 200px;
+    height: 200px;
+}
+img:hover{
+    transform: scale(1.5,1.5);
+}
