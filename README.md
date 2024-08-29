@@ -1,0 +1,1 @@
+# Album_fotos_tipo
