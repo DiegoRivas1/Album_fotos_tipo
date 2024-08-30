@@ -1,0 +1,74 @@
+body{
+    background-color:#01012b;
+    
+}
+
+
+.contenedorImagen{
+    width: 1000px; height: 300px;
+    border: 2px solid #ecf0f1;
+    overflow: hidden;
+    border-radius: 100px;
+    cursor: pointer;
+    position: relative;
+    background-color:	#060c21;
+    display: flex;
+    gap: 10px 40px;
+    
+    
+    
+}
+@keyframes cambiarColorContenedor {
+    
+    50% {
+        background-color:#005678;
+    }
+    100% {
+        background-color: #01012b;
+    }
+}
+@keyframes cambiarColorShadow {
+    0% {
+        box-shadow: 0px 0px 20px#ff2a6d;
+    }
+    20% {
+        box-shadow: 0px 0px 40px #ff2a6d;
+    }
+    40% {
+        box-shadow: 0px 0px 60px #ff2a6d;
+    }
+    60% {
+        box-shadow: 0px 0px 80PX #ff2a6d;
+    }
+    80% {
+        box-shadow: 0px 0px 100px #ff2a6d;
+    }
+    100% {
+        box-shadow: 0px 0px 120PX #ff2a6d;
+    }
+}
+img{
+    position: relative;
+    top: 10%; left: 10%;
+    object-fit: cover;
+    transition:  border 1s ease;
+    width: 200px;
+    height: 200px;
+    border: 3px solid beige;
+    box-shadow: 0px 0px 100px cadetblue;
+    
+}
+img:hover{
+    transform:  rotate3d(1,0,0,45deg);
+    translate: 10px 5px 5px;
+    border: 1px solid #85ebd9;
+    transition: 2s ease;
+    object-fit: cover;
+    box-shadow: 10px 0px 50px darkmagenta;
+    animation: cambiarColorShadow 5s ease-in-out infinite;
+    
+}
+
+h1{
+    box-shadow: 0px 0px 10px chocolate;
+}
