@@ -13,12 +13,32 @@ console.log('Imagen añadida al contenedor');
 */
 let idContenedorImagenes=0;
 let idContenedor=0;
+let itemLista=0;
+let banderaContenedorBusqueda=true;
 function crearContenedorImagenes(strNombre){
     const contenedorImagenes = document.createElement('div');
     contenedorImagenes.setAttribute('class',strNombre);//contenedorFila
     idContenedorImagenes++;
     contenedorImagenes.setAttribute('id',strNombre+idContenedorImagenes.toString());
-    document.body.appendChild(contenedorImagenes);
+    //document.body.appendChild(contenedorImagenes);
+    if(idContenedorImagenes>=2){
+        //const contenedor = document.getElementById(strNombre+idContenedorImagenes.toString());
+
+
+    // Selecciona la etiqueta de referencia (la etiqueta que ya existe en el contenedor)
+    const referencia = document.getElementById('contenedorBusquedaItem');
+
+
+    // Crea una nueva etiqueta <p>s
+
+
+    // Inserta la nueva etiqueta antes de la etiqueta de referencia
+    document.body.insertBefore(contenedorImagenes, referencia);
+    }
+    else{
+        document.body.appendChild(contenedorImagenes);
+    }
+
     //return contenedorImagenes;
 }
 
@@ -57,8 +77,39 @@ function crearAnimacion(nombreImagen){
     for(let i=1;i<=3;i++){
         //crearContenedorImagen('contenedorImagen');
         crearImagen(nombreImagen,i);
+        
     }
+    if(banderaContenedorBusqueda){
+        crearContenedorBusqueda();
+        console.log('asd');
+        banderaContenedorBusqueda=false;
+    }
+    crearItemBusqueda(nombreImagen);
     
+}
+
+
+function crearContenedorBusqueda(){
+
+    const itemLista = document.createElement('div');
+    itemLista.setAttribute('id','contenedorBusquedaItem');
+
+    const listasRecientes = document.createElement('ol');
+    listasRecientes.setAttribute('id','listasRecientes');
+
+    itemLista.appendChild(listasRecientes);
+
+    
+    document.body.appendChild(itemLista);
+}
+
+function crearItemBusqueda(strNombreBusqueda){
+    const listasRecientes = document.getElementById('listasRecientes');
+
+    const itemLista = document.createElement('li');
+    
+    itemLista.textContent = strNombreBusqueda;
+    listasRecientes.appendChild(itemLista);
 }
 
 /*
